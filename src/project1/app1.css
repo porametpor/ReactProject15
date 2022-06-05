@@ -1,0 +1,59 @@
+
+body {
+    font-family: 'Open Sans';
+    background: var(--clr-pink);
+    color: var(--clr-grey-9);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90vw;
+    margin: 5rem 0;
+    max-width: var(--fixed-width);
+    background: var(--clr-white);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--dark-shadow);
+}
+
+.container button {
+    color: var(--clr-white);
+    display: block;
+    width: 100%;
+    border: none;
+    background: var(--clr-pink);
+    margin-top: 2rem;
+    /*ทำให้ขึ้นต้นด้วยตัวใหญ่*/
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    /*ความห่างตัวอักษร*/
+    letter-spacing: var(--spacing);
+    border-radius: var(--radius);
+    outline: 1px solid var(--clr-grey-9);
+    cursor: pointer;
+}
+
+.person {
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.person img {
+    width: 75px;
+    height: 75px;
+    /*ทำให้ภาพสเกลเท่าเดิม*/
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--light-shadow);
+}
