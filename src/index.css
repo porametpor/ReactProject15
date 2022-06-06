@@ -4,12 +4,15 @@
     --clr-primary-7: hsl(205, 90%, 76%);
     --clr-primary-10: hsl(205, 100%, 96%);
     --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-5: hsl(210, 22%, 49%);
     --clr-grey-9: #4B5D67;
     --clr-grey-10: hsl(210, 36%, 96%);
     --clr-grey-special: #eae6eb;
     --clr-pink: #f28ab2;
     --clr-purple: #4b145b;
+    --clr-green-dark: hsl(125, 67%, 44%);
     --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
     --clr-red-special: #b4345c;
     --clr-white: #fff;
     --clr-gold: #c59d5f;

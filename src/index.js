@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import App10 from './project10/App10';
+//import App9 from './project9/App9';
 //import App6 from './project6/App6';
 //import App7 from './project7/App7';
-import App8 from './project8/App8';
+//import App8 from './project8/App8';
 //import App1 from './project1/App1';
 //import App2 from './project2/App2';
 //import App3 from './project3/App3';
@@ -20,6 +22,8 @@ root.render(
     {/*<App5 />*/}
     {/*<App6 />*/}
     {/*<App7 />*/}
-    <App8 />
+    {/*<App8 />*/}
+    {/*<App9 />*/}
+    <App10 />
   </>
 );
