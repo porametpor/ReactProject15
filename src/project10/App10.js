@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./app10.css";
 import Alert from "./components/Alert";
 import List from "./components/List";
 
+const getLocalstorage = () => {
+  let list = localStorage.getItem('list');
+  console.log(list);
+  if(list) {
+    return JSON.parse(localStorage.getItem('list'))
+  } else {
+    return [];
+  }
+}
+
 const App10 = () => {
   const [name, setName] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalstorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+  useEffect(()=> {
+    localStorage.setItem('list', JSON.stringify(list));
+  }, [list])
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!name) {

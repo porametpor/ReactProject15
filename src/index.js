@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App10 from './project10/App10';
+//import App10 from './project10/App10';
+//import App11 from './project11/App11';
+import App12 from './project12/App12';
 //import App9 from './project9/App9';
 //import App6 from './project6/App6';
 //import App7 from './project7/App7';
@@ -24,6 +26,8 @@ root.render(
     {/*<App7 />*/}
     {/*<App8 />*/}
     {/*<App9 />*/}
-    <App10 />
+    {/*<App10 />*/}
+    {/*<App11 />*/}
+    <App12 />
   </>
 );
