@@ -6,6 +6,16 @@ const client = new ApolloClient({
     cache: new InMemoryCache()
 });
 
+const vocabs = gql`
+        query VocabsQuery {
+            vocabs {
+                meaning
+                vocab
+                id
+            }
+        }
+    `
+
 const Apollo = () => {
     return (
         <ApolloProvider client={client}>
@@ -20,33 +30,22 @@ const Apollo = () => {
 
 
 const VocabList = () => {
-    const vocabs = gql`
-        query VocabsQuery {
-            vocabs {
-                meaning
-                vocab
-                id
-            }
-        }
-`
-
-const { loading, error, data } = useQuery(vocabs);
-console.log(data);
-if(loading) return <p>Loading</p>;
-if(error) return <p>Error</p>;
-return (
-    <div>
-        <h3>รายการคำศัพท์</h3>
+    const { loading, error, data } = useQuery(vocabs);
+    if(loading) return <p>Loading</p>;
+    if(error) return <p>Error</p>;
+    return (
         <div>
-            {
-                data && data.vocabs.map((item)=>{
-                    return <p key={item.id}>
-                        {item.vocab} = {item.meaning}
-                    </p>
-                })
-            }
+            <h3>รายการคำศัพท์</h3>
+            <div>
+                {
+                    data && data.vocabs.map((item)=>{
+                        return <p key={item.id}>
+                            {item.vocab} = {item.meaning}
+                        </p>
+                    })
+                }
+            </div>
         </div>
-    </div>
     )
 }
 
