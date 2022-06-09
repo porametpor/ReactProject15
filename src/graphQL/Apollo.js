@@ -1,64 +1,52 @@
-import React, { useState } from 'react';
-import { ApolloClient, ApolloProvider, useQuery, gql, InMemoryCache } from '@apollo/client';
+import React from 'react';
+import { ApolloClient, ApolloProvider, useQuery, gql, InMemoryCache, useMutation } from '@apollo/client';
 
 const client = new ApolloClient({
-    uri: 'https://api-ap-northeast-1.graphcms.com/v2/cktefu37f2up601z78q95htoq/master',
+    uri: 'https://api-ap-northeast-1.graphcms.com/v2/cl46pkrs229wm01z326bo0104/master',
     cache: new InMemoryCache()
 });
 
 const Apollo = () => {
-    const [text, setText] = useState('');
     return (
         <ApolloProvider client={client}>
             <div className="App">
-                <h1>Hello CodeSandbox</h1>
-                <h2>ตัวอย่างโปรแกรม React เรียกใช้งาน GraphQL</h2>
-                <SearchText text={text} setText={setText} />
-                <VocabList text={text}/>
+                <h1>Hello</h1>
+                <h2>GraphQL</h2>
+                <VocabList/>
             </div>
         </ApolloProvider>
     );
 };
 
-const SearchText = ({ text = "", setText }) => {
-    return (
-      <div>
-        <input
-          type="text"
-          placeholder="ค้นหาศัพท์"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-      </div>
-    );
-  };
 
-const VocabList = ({text}) => {
+const VocabList = () => {
     const vocabs = gql`
         query VocabsQuery {
-            vocabs(where: {contains: "${text}"}) {
-                id
-                vocab
+            vocabs {
                 meaning
+                vocab
+                id
             }
         }
-    `
-    const { loading, error, data } = useQuery(vocabs);
-    if(loading) return <p>Loading</p>;
-    if(error) return <p>Error</p>;
-    return (
+`
+
+const { loading, error, data } = useQuery(vocabs);
+console.log(data);
+if(loading) return <p>Loading</p>;
+if(error) return <p>Error</p>;
+return (
+    <div>
+        <h3>รายการคำศัพท์</h3>
         <div>
-            <h3>รายการคำศัพท์</h3>
-            <div>
-                {
-                    data && data.vocabs.map((item)=>{
-                        return <p key={item.id}>
-                            {item.vocab} = {item.meaning}
-                        </p>
-                    })
-                }
-            </div>
+            {
+                data && data.vocabs.map((item)=>{
+                    return <p key={item.id}>
+                        {item.vocab} = {item.meaning}
+                    </p>
+                })
+            }
         </div>
+    </div>
     )
 }
 

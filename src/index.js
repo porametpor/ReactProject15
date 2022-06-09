@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Apollo from './graphQL/Apollo';
+//import Apollo2 from './graphQL/Apollo2';
 import './index.css';
 import App13 from './project13/App13';
 //import App10 from './project10/App10';
@@ -35,5 +36,6 @@ root.render(
     {/* <App13 /> */}
     {/* <App15 /> */}
     <Apollo />
+    {/* <Apollo2 /> */}
   </>
 );
