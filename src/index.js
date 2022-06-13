@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Apollo from './graphQL/Apollo';
-//import Apollo2 from './graphQL/Apollo2';
 import './index.css';
 
-import App15 from './project15/App15';
+// import App1 from './project1/App1';
 // import App2 from './project2/App2';
 // import App3 from './project3/App3';
 // import App4 from './project4/App4';
@@ -18,17 +16,22 @@ import App15 from './project15/App15';
 // import App12 from './project12/App12';
 // import App13 from './project13/App13';
 // import App15 from './project15/App15';
+// import Apollo from './graphQL/Apollo';
+// import Apollo2 from './graphQL/Apollo2';
+// import SimpleForm1 from './formik/SimpleForm1';
+import SimpleForm2 from './formik/SimpleForm2';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <App15 />
-    {/* <App2 />
+    {/* <App1 />
+    <App2 />
     <App3 />
     <App4 />
     <App5 />
     <App6 />
-    <App7 />
+    <App7 /> 
     <App8 />
     <App9 />
     <App10 />
@@ -36,7 +39,9 @@ root.render(
     <App12 /> 
     <App13 /> 
     <App15 /> 
-    <Apollo />
-    {/* <Apollo2 /> */}
+    <Apollo /> 
+    <Apollo2 /> 
+    <SimpleForm1 /> */}
+    <SimpleForm2 />
   </>
 );
