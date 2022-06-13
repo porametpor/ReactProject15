@@ -16,18 +16,38 @@ const vocabs = gql`
         }
     `
 
+const createVocab = gql`
+    mutation MyMutation {
+        createVocab(data: {vocab: "kick", meaning: "get out"}) {
+            id
+        }
+    }
+`
+
 const Apollo = () => {
     return (
         <ApolloProvider client={client}>
             <div className="App">
                 <h1>Hello</h1>
                 <h2>GraphQL</h2>
+                <MutationCreate />
                 <VocabList/>
             </div>
         </ApolloProvider>
     );
 };
 
+const MutationCreate = () => {
+    const [caeateVocab] = useMutation(createVocab)
+    return (
+        <form onSubmit={e=>{
+            e.preventDefault();
+            caeateVocab();
+        }}>
+            <button type='submit'>update</button>
+        </form>
+    );
+}
 
 const VocabList = () => {
     const { loading, error, data } = useQuery(vocabs);
