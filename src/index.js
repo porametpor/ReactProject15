@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
+import Props from './props/Props';
+
 // import App1 from './project1/App1';
 // import App2 from './project2/App2';
 // import App3 from './project3/App3';
@@ -20,8 +22,8 @@ import './index.css';
 // import Apollo2 from './graphQL/Apollo2';
 // import SimpleForm1 from './formik/SimpleForm1';
 // import SimpleForm2 from './formik/SimpleForm2';
-import LoginForm from './formik/LoginForm';
-import RegistrationForm from './formik/RegistrationForm';
+// import LoginForm from './formik/LoginForm';
+// import RegistrationForm from './formik/RegistrationForm';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -45,7 +47,8 @@ root.render(
     <Apollo2 /> 
     <SimpleForm1 /> 
     <SimpleForm2 />
-    <LoginForm />*/}
-    <RegistrationForm />
+    <LoginForm />
+    <RegistrationForm />*/}
+    <Props />
   </>
 );
