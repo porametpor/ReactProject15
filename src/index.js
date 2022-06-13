@@ -19,7 +19,9 @@ import './index.css';
 // import Apollo from './graphQL/Apollo';
 // import Apollo2 from './graphQL/Apollo2';
 // import SimpleForm1 from './formik/SimpleForm1';
-import SimpleForm2 from './formik/SimpleForm2';
+// import SimpleForm2 from './formik/SimpleForm2';
+import LoginForm from './formik/LoginForm';
+import RegistrationForm from './formik/RegistrationForm';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -41,7 +43,9 @@ root.render(
     <App15 /> 
     <Apollo /> 
     <Apollo2 /> 
-    <SimpleForm1 /> */}
+    <SimpleForm1 /> 
     <SimpleForm2 />
+    <LoginForm />*/}
+    <RegistrationForm />
   </>
 );
